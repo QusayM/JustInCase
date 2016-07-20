@@ -26,21 +26,37 @@ import Foundation
 import UIKit
 
 class PageOneView: UIView {
-    @IBOutlet internal weak var dateLabel: UILabel!
-    @IBOutlet internal weak var reportLabel: UILabel!
 
-    @IBOutlet internal weak var tenantCompanyLabel: UILabel!
-    @IBOutlet internal weak var tenantNameLabel: UILabel!
-    @IBOutlet internal weak var tenantStreetLabel: UILabel!
-    @IBOutlet internal weak var tenantPlzAndCityLabel: UILabel!
-    @IBOutlet internal weak var tenantCountryLabel: UILabel!
-
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var idNumberLabel: UILabel!
+    @IBOutlet weak var livingAddressLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    
+    @IBOutlet weak var registrationNumberLabel: UILabel!
+    @IBOutlet weak var insuranceCompanyLabel: UILabel!
+    @IBOutlet weak var insuranceNumberLabel: UILabel!
+    
+    @IBOutlet weak var accidentAddressLabel: UILabel!
+    @IBOutlet weak var accidentPictureImageView: UIImageView!
+    
+    var accidentObj : Accident? = nil
+    
     internal func setupViewContent() {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        if let dateLabel = self.dateLabel {
-            dateLabel.text = dateFormatter.stringFromDate(NSDate())
-        }
+        let fullName : String = "\(accidentObj!.driver.firstName) \(accidentObj!.driver.secondName)"
+        
+        fullNameLabel.text = fullName 
+        idNumberLabel.text = accidentObj?.driver.idNumber
+        livingAddressLabel.text = accidentObj?.driver.address
+        phoneNumberLabel.text = accidentObj?.driver.phoneNumber
+        
+        registrationNumberLabel.text = accidentObj?.driver.vehicle.registrationNumber
+        insuranceCompanyLabel.text = accidentObj?.driver.vehicle.insuranceCompany
+        insuranceNumberLabel.text = accidentObj?.driver.vehicle.insuranceNumber
+        
+        accidentAddressLabel.text = accidentObj!.address
+        accidentPictureImageView.image = accidentObj!.image
     }
 }

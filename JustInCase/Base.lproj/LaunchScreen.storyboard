@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,15 +15,39 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JustInCase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3q-PR-F39">
+                                <rect key="frame" x="20" y="102" width="335" height="106"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yKn-Ij-P6W">
+                                <rect key="frame" x="87" y="234" width="200" height="200"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o3q-PR-F39" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="4" id="3mh-b2-iqP"/>
+                            <constraint firstItem="yKn-Ij-P6W" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ktj-aM-zSc"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="yKn-Ij-P6W" secondAttribute="bottom" constant="233" id="Xy0-cA-Iy7"/>
+                            <constraint firstItem="yKn-Ij-P6W" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="71" id="Ybn-lb-tX0"/>
+                            <constraint firstItem="o3q-PR-F39" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="82" id="aHQ-C5-BVu"/>
+                            <constraint firstItem="o3q-PR-F39" firstAttribute="centerX" secondItem="yKn-Ij-P6W" secondAttribute="centerX" id="dYt-Qb-CwH"/>
+                            <constraint firstItem="yKn-Ij-P6W" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qob-0H-mYA"/>
+                            <constraint firstItem="yKn-Ij-P6W" firstAttribute="top" secondItem="o3q-PR-F39" secondAttribute="bottom" constant="26" id="yPs-dz-AdK"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo.png" width="280" height="280"/>
+    </resources>
 </document>
